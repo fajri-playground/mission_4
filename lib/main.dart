@@ -6,7 +6,7 @@ import 'models/daily_record.dart';
 void main() {
   print('=== HABIT TRACKER TEST ===\n');
 
-  // STEP 1: Buat Object Habit
+  // STEP 1: Buat objek Habit sebagai data awal.
   print('STEP 1: Membuat Object Habit');
   Habit marathon = Habit(
     nama: 'Marathon 5KM',
@@ -16,17 +16,17 @@ void main() {
   );
   print('Habit dibuat: ${marathon.nama}\n');
 
-  // STEP 2: Serialisasi (Object -> JSON)
+  // STEP 2: Serialisasi (Object -> JSON) untuk simulasi penyimpanan/kirim data.
   print('STEP 2: Mengubah ke JSON');
   Map<String, dynamic> jsonHabit = marathon.toJson();
   print('Data JSON: $jsonHabit\n');
 
-  // STEP 3: Deserialisasi (JSON -> Object)
+  // STEP 3: Deserialisasi (JSON -> Object) untuk memastikan data bisa dipulihkan.
   print('STEP 3: Mengubah JSON ke Object');
   Habit habitFromJson = Habit.fromJson(jsonHabit);
   print('Object baru dibuat dari JSON\n');
 
-  // STEP 4: Verifikasi Data
+  // STEP 4: Verifikasi Data hasil serialisasi-deserialisasi.
   print('STEP 4: Verifikasi Data');
   print('Nama Asli:  ${marathon.nama}');
   print('Nama Hasil: ${habitFromJson.nama}');
@@ -35,10 +35,9 @@ void main() {
   // === ***************************************************** ===
 
   // Cek alur serialisasi DailyRecord sebagai verifikasi tambahan.
-  // Test DailyRecord
   print('\n\n=== DAILY RECORD TEST ===\n');
 
-  // STEP 5: Buat Object DailyRecord
+  // STEP 5: Buat objek DailyRecord sebagai contoh catatan harian.
   print('STEP 5: Membuat Object DailyRecord');
   DailyRecord record = DailyRecord(
     tanggal: DateTime(2026, 1, 19),
@@ -46,17 +45,17 @@ void main() {
   );
   print('Record dibuat: ${record.tanggal.toLocal()}\n');
 
-  // STEP 6: Serialisasi (Object -> JSON)
+  // STEP 6: Serialisasi (Object -> JSON).
   print('STEP 6: Mengubah ke JSON');
   Map<String, dynamic> jsonRecord = record.toJson();
   print('Data JSON: $jsonRecord\n');
 
-  // STEP 7: Deserialisasi (JSON -> Object)
+  // STEP 7: Deserialisasi (JSON -> Object).
   print('STEP 7: Mengubah JSON ke Object');
   DailyRecord recordFromJson = DailyRecord.fromJson(jsonRecord);
   print('Object baru dibuat dari JSON\n');
 
-  // STEP 8: Verifikasi Data
+  // STEP 8: Verifikasi Data hasil serialisasi-deserialisasi.
   print('STEP 8: Verifikasi Data');
   print('Tanggal Asli:  ${record.tanggal.toLocal()}');
   print('Tanggal Hasil: ${recordFromJson.tanggal.toLocal()}');

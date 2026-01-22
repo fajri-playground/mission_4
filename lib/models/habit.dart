@@ -2,8 +2,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'habit.g.dart';
 
-// Annotasi ini memberitahu package json_serializable untuk menghasilkan
-// kode serialisasi untuk kelas Habit.
+// Model utama untuk data kebiasaan.
+//
+// json_serializable akan menghasilkan fungsi helper agar objek ini bisa
+// diubah ke/dari JSON tanpa menulis parsing manual.
 @JsonSerializable()
 class Habit {
   final String nama;
@@ -18,9 +20,11 @@ class Habit {
     required this.warna,
   });
 
-  // Helper serialisasi hasil generate ada di habit.g.dart.
+  // Factory ini membaca Map dari JSON lalu membuat objek Habit.
+  // Implementasinya di-generate pada file habit.g.dart.
   factory Habit.fromJson(Map<String, dynamic> json) =>
       _$HabitFromJson(json);
 
+  // Mengubah objek Habit menjadi Map agar mudah disimpan/ditransfer.
   Map<String, dynamic> toJson() => _$HabitToJson(this);
 }
