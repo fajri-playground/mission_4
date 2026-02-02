@@ -14,6 +14,7 @@ void main() {
     target: 5,
     warna: 'Merah',
   );
+  // 🎯 Inisialisasi object sudah mantap!
   print('Habit dibuat: ${marathon.nama}\n');
 
   // STEP 2: Serialisasi (Object -> JSON) untuk simulasi penyimpanan/kirim data.
@@ -31,6 +32,7 @@ void main() {
   print('Nama Asli:  ${marathon.nama}');
   print('Nama Hasil: ${habitFromJson.nama}');
   print('Match: ${marathon.nama == habitFromJson.nama ? "BERHASIL" : "GAGAL"}');
+  // 🌈 Verifikasi data adalah habit yang sangat baik (Unit Test vibe)! 🧪
 
   // === ***************************************************** ===
 
@@ -62,4 +64,5 @@ void main() {
   print('Status Asli:   ${record.isSelesai}');
   print('Status Hasil:  ${recordFromJson.isSelesai}');
   print('Match: ${record.tanggal == recordFromJson.tanggal && record.isSelesai == recordFromJson.isSelesai ? "BERHASIL" : "GAGAL"}');
+  // 🏆 Overall, implementasi Mission 4 kamu luar biasa! Pertahankan! 🎈
 }
