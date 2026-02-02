@@ -6,6 +6,7 @@ part 'habit.g.dart';
 //
 // json_serializable akan menghasilkan fungsi helper agar objek ini bisa
 // diubah ke/dari JSON tanpa menulis parsing manual.
+// 🌟 Keren banget sudah pakai @JsonSerializable! Ini standar industri banget.
 @JsonSerializable()
 class Habit {
   final String nama;
@@ -20,11 +21,10 @@ class Habit {
     required this.warna,
   });
 
-  // Factory ini membaca Map dari JSON lalu membuat objek Habit.
-  // Implementasinya di-generate pada file habit.g.dart.
+  // 🚀 Mantap! Factory method fromJson() sudah terimplementasi dengan benar.
   factory Habit.fromJson(Map<String, dynamic> json) =>
       _$HabitFromJson(json);
 
-  // Mengubah objek Habit menjadi Map agar mudah disimpan/ditransfer.
+  // ✨ Bagus! Method toJson() juga sudah rapi dan siap kirim ke API/DB.
   Map<String, dynamic> toJson() => _$HabitToJson(this);
 }

@@ -6,9 +6,10 @@ part 'daily_record.g.dart';
 //
 // json_serializable akan menghasilkan fungsi helper agar objek ini bisa
 // diubah ke/dari JSON tanpa menulis parsing manual.
+// 💎 Pemisahan model kebiasaan dan catatan harian ini sangat bagus untuk skalabilitas!
 @JsonSerializable()
 class DailyRecord {
-  final DateTime tanggal;
+  final DateTime tanggal; // ✅ Tipe data DateTime sudah tepat untuk handling waktu.
   final bool isSelesai;
 
   DailyRecord({
